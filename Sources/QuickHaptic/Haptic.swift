@@ -6,6 +6,8 @@
 //
 
 import Foundation
+
+#if os(iOS)
 import UIKit
 
 /**
@@ -55,3 +57,5 @@ public struct Haptic {
     }
   }
 }
+
+#endif
