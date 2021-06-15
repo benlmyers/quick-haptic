@@ -7,7 +7,7 @@ Quickly create haptic feedback using this module.
 
 Use ****Swift Package Manager**** to install this package:
 
-```swift
+```
 https://github.com/benlmyers/quick-haptic
 ```
 
