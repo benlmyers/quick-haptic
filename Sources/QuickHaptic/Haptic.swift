@@ -29,6 +29,15 @@ public struct Haptic {
   }
   
   /**
+   Plays a notification feedback.
+   
+   - parameter type: The type of the notification feedback.
+   */
+  public static func play(_ type: UINotificationFeedbackGenerator.FeedbackType) {
+    UINotificationFeedbackGenerator().notificationOccurred(type)
+  }
+  
+  /**
    Plays the specified haptic feedback style twice in succession.
    
    - parameter style: The style of the haptic feedback.
