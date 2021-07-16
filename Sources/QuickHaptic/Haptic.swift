@@ -22,7 +22,7 @@ public struct Haptic {
   { get {
     UserDefaults.standard.bool(forKey: "haptic_feedback")
   } set {
-    UserDefaults.standard.set(true, forKey: "haptic_feedback")
+    UserDefaults.standard.set(newValue, forKey: "haptic_feedback")
   }}
   
   
