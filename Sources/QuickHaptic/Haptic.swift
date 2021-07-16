@@ -18,7 +18,7 @@ public struct Haptic {
   
   // MARK: - Public Static Properties
   
-  static var enabled: Bool
+  public static var enabled: Bool
   { get {
     UserDefaults.standard.bool(forKey: "haptic_feedback")
   } set {
