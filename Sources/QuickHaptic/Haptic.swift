@@ -16,6 +16,16 @@ import UIKit
 @available(iOS 10.0, *)
 public struct Haptic {
   
+  // MARK: - Public Static Properties
+  
+  static var enabled: Bool
+  { get {
+    UserDefaults.standard.bool(forKey: "haptic_feedback")
+  } set {
+    UserDefaults.standard.set(true, forKey: "haptic_feedback")
+  }}
+  
+  
   // MARK: - Public Static Methods
   
   /**
@@ -24,8 +34,10 @@ public struct Haptic {
    - parameter style: The style of the haptic feedback.
    */
   public static func play(_ style: UIImpactFeedbackGenerator.FeedbackStyle) {
-    let impact = UIImpactFeedbackGenerator(style: style)
-    impact.impactOccurred()
+    if enabled {
+      let impact = UIImpactFeedbackGenerator(style: style)
+      impact.impactOccurred()
+    }
   }
   
   /**
@@ -34,7 +46,9 @@ public struct Haptic {
    - parameter type: The type of the notification feedback.
    */
   public static func play(_ type: UINotificationFeedbackGenerator.FeedbackType) {
-    UINotificationFeedbackGenerator().notificationOccurred(type)
+    if enabled {
+      UINotificationFeedbackGenerator().notificationOccurred(type)
+    }
   }
   
   /**
@@ -43,7 +57,9 @@ public struct Haptic {
    - parameter style: The style of the haptic feedback.
    */
   public static func double(_ style: UIImpactFeedbackGenerator.FeedbackStyle) {
-    double(style, style)
+    if enabled {
+      double(style, style)
+    }
   }
   
   /**
@@ -53,8 +69,10 @@ public struct Haptic {
    - parameter style2: The style of the second haptic feedback.
    */
   public static func double(_ style1: UIImpactFeedbackGenerator.FeedbackStyle, _ style2: UIImpactFeedbackGenerator.FeedbackStyle) {
-    play(style1)
-    player(style2, delay: 0.1)
+    if enabled {
+      play(style1)
+      player(style2, delay: 0.1)
+    }
   }
   
   // MARK: - Private Static Methods
