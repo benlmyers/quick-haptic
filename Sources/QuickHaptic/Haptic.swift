@@ -20,7 +20,7 @@ public struct Haptic {
   
   public static var enabled: Bool
   { get {
-    UserDefaults.standard.bool(forKey: "haptic_feedback")
+    UserDefaults.standard.bool(forKey: "haptic_feedback") ?? true
   } set {
     UserDefaults.standard.set(newValue, forKey: "haptic_feedback")
   }}
