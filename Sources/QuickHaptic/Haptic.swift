@@ -84,5 +84,4 @@ public struct Haptic {
     }
   }
 }
-
 #endif
